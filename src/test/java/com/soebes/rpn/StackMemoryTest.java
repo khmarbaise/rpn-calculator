@@ -22,7 +22,17 @@ class StackMemoryTest {
     stackMemory.push(Integer.valueOf(200));
 
     Object pop = stackMemory.pop();
-    assertThat(stackMemory.size()).isEqualTo(1);
+    assertThat(stackMemory.size()).isZero();
+  }
+
+  @Test
+  void third() {
+    StackMemory stackMemory = new StackMemory();
+
+    stackMemory.push("This is Text");
+
+    Object pop = stackMemory.pop();
+    assertThat(stackMemory.size()).isZero();
   }
 
 }
