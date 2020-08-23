@@ -1,7 +1,12 @@
 package com.soebes.rpn;
 
+import org.apiguardian.api.API;
+
 import java.util.ArrayDeque;
 
+import static org.apiguardian.api.API.Status.EXPERIMENTAL;
+
+@API(status = EXPERIMENTAL)
 public class StackMemory {
   private final ArrayDeque<Element> stack;
 
