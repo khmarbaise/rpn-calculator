@@ -3,13 +3,13 @@ package com.soebes.rpn;
 import java.util.ArrayDeque;
 
 public class StackMemory {
-  private final ArrayDeque<Object> stack;
+  private final ArrayDeque<Element> stack;
 
   public StackMemory() {
     this.stack = new ArrayDeque<>();
   }
 
-  public void push(Object item) {
+  public void push(Element item) {
     this.stack.addFirst(item);
   }
 
