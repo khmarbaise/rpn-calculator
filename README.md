@@ -16,6 +16,16 @@
 -->
 # rpn-calculator
 
+ * Reelle Zahl `reell`
+ * Komplexe Zahl `(re,im)`
+ * Binär Wert `#Zeiche`
+ * String `"Text"`
+ * Reeller Vektor `[reell reell]`
+ * Reelle Matrix `[[r11,r21][r21,r22][r31,r32]]`
+ * Komplexer Vektor `[(a,b) (a,b)]`
+ * Komplexer Matrix `[[(a,b),(a,b)][(a,b),(a,b)][(a,b),(a,b)]]`
+ * Liste `{Object, Object,...}`
+ * Ausdruck `'Ausdruck'`
 
 # Build
 

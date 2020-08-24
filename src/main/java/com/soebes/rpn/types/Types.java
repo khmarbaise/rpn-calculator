@@ -10,5 +10,7 @@ public enum Types {
   Complex,
   Real,
   Int,
-  Str
+  Str,
+  Matrix,
+  Vector
 }
