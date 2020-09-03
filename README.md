@@ -18,7 +18,7 @@
 
  * Reelle Zahl `reell`
  * Komplexe Zahl `(re,im)`
- * Binär Wert `#Zeiche`
+ * Binär Wert `#Zeichen`
  * String `"Text"`
  * Reeller Vektor `[reell reell]`
  * Reelle Matrix `[[r11,r21][r21,r22][r31,r32]]`
