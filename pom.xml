@@ -109,4 +109,8 @@
     </dependency>
   </dependencies>
 
+  <modules>
+    <module>numbers</module>
+    <module>rpn</module>
+  </modules>
 </project>
