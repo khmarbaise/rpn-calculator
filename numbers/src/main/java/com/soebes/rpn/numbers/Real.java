@@ -19,10 +19,14 @@ package com.soebes.rpn.numbers;
  * under the License.
  */
 
-public class Complex implements Calculation<Complex> {
+public class Real implements Calculation<Real> {
 
-  @Override
-  public Complex plus(Complex value) {
+  public Real() {
+
+  }
+
+  public Real plus(Real real) {
     return null;
   }
+
 }

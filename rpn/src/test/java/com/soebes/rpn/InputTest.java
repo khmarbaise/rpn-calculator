@@ -19,18 +19,41 @@ package com.soebes.rpn;
  * under the License.
  */
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 class InputTest {
 
-  private static final String X = """
-                                  [[(a,b),(a,b)]
-                                   [(a,b),(a,b)]
-                                   [(a,b),(a,b)]]""";
-  @Test
-  void name() {
-    System.out.println("--------------------------------------");
-    System.out.println(X);
-    System.out.println("--------------------------------------");
+  @Nested
+  @DisplayName("Real Matrix")
+  class RealMatrix {
+
+    private static final String X = """
+        [[(a,b),(a,b)]
+         [(a,b),(a,b)]
+         [(a,b),(a,b)]]""";
+
+    @Test
+    void name() {
+      System.out.println("--------------------------------------");
+      System.out.println(X);
+      System.out.println("--------------------------------------");
+    }
   }
+
+  @Nested
+  @DisplayName("RealVector")
+  class RealVector {
+    private static final String X = "[1 2 3 4]";
+
+    @Test
+    void name() {
+      System.out.println("--------------------------------------");
+      System.out.println(X);
+      System.out.println("--------------------------------------");
+    }
+
+  }
+
 }
