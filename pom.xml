@@ -35,6 +35,7 @@
   <groupId>com.soebes.rpn</groupId>
   <artifactId>rpn-calculator</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <scm>
     <connection>scm:git:https://github.com/khmarbaise/rpn-calculator.git</connection>
