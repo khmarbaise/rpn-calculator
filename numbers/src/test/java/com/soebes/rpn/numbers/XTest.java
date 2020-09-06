@@ -19,13 +19,13 @@ package com.soebes.rpn.numbers;
  * under the License.
  */
 
-import java.math.BigInteger;
 import org.junit.jupiter.api.Test;
 
 class XTest {
 
   @Test
   void name() {
+
     // Teste Reeller Vektor
     // Reelle Matrix
     // Komplexer Vektor

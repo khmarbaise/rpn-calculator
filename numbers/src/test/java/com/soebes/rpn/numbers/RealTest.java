@@ -19,14 +19,47 @@ package com.soebes.rpn.numbers;
  * under the License.
  */
 
+import org.assertj.core.data.Offset;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+@DisplayName("Test for Real type")
 class RealTest {
 
-  @Test
-  void name() {
-    Real real = new Real();
+  private static final Offset<Double> EPSILON = Offset.offset(1e-6);
 
+  @Nested
+  @DisplayName("Add")
+  class Addition {
+
+    @Test
+    @DisplayName("two reals to sum")
+    void add() {
+      Real summand_1 = new Real(1.3);
+      Real summand_2 = new Real(1.3);
+      Real sum = summand_1.plus(summand_2);
+      assertThat(sum.getValue()).isEqualTo(2.6, EPSILON);
+      assertThat(sum).isEqualTo(new Real(2.6));
+    }
+
+
+  }
+
+  @Nested
+  @DisplayName("Subtract")
+  class Subtraction {
+
+    @Test
+    @DisplayName("two reals to difference")
+    void add() {
+      Real minuend = new Real(1.3);
+      Real subtrahend = new Real(1.3);
+      Real difference = minuend.subtract(subtrahend);
+      assertThat(difference).isEqualTo(new Real(0.0));
+    }
 
   }
 }

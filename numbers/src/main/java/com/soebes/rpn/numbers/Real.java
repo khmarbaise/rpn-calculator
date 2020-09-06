@@ -21,12 +21,37 @@ package com.soebes.rpn.numbers;
 
 public class Real implements Calculation<Real> {
 
-  public Real() {
+  private final double value;
 
+  public Real(double value) {
+    this.value = value;
   }
 
-  public Real plus(Real real) {
-    return null;
+  public double getValue() {
+    return value;
   }
 
+  public Real subtract(Real subtrahend) {
+    return new Real(this.getValue() - subtrahend.getValue());
+  }
+
+  public Real plus(Real add) {
+    return new Real(this.getValue() + add.getValue());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Real real = (Real) o;
+
+    return Double.compare(real.value, value) == 0;
+  }
+
+  @Override
+  public int hashCode() {
+    long temp = Double.doubleToLongBits(value);
+    return (int) (temp ^ (temp >>> 32));
+  }
 }

@@ -25,4 +25,9 @@ public class Complex implements Calculation<Complex> {
   public Complex plus(Complex value) {
     return null;
   }
+
+  @Override
+  public Complex subtract(Complex value) {
+    return null;
+  }
 }

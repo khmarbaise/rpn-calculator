@@ -25,4 +25,9 @@ public class Vector implements Calculation<Vector> {
   public Vector plus(Vector value) {
     return null;
   }
+
+  @Override
+  public Vector subtract(Vector value) {
+    return null;
+  }
 }
