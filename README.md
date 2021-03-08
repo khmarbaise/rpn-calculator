@@ -37,6 +37,9 @@ mvn clean verify org.jacoco:jacoco-maven-plugin:report
 https://www.manualslib.com/manual/1527472/Hp-Hp-28s.html?page=44#manual
 https://www.youtube.com/watch?v=eni1hv94gRA
 
+Precision HP28S vs. IEEE 754 double precision (Java Double)
+* http://thimet.de/CalcCollection/Calculators/HP-28SC/HP-28S-Quick-Reference.pdf
+* https://en.wikipedia.org/wiki/Double-precision_floating-point_format
 
 Sehr gut 
 https://tredje.se/rpn28xcalc.html
