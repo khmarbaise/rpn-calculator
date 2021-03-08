@@ -21,7 +21,18 @@ grammar Expr;
 
 start: expr*;
 
-expr: Real #GRPREAL;
+expr: complex
+    | realVector
+    | realMatrix
+    | complexVector
+    | complexMatrix
+    | Real;
+
+complex: COMPLEXLP Real ',' Real COMPLEXRP;
+complexVector: VECTORLP complex VECTORRP;
+complexMatrix: VECTORLP complexVector+ VECTORRP;
+realVector: VECTORLP Real+ VECTORRP;
+realMatrix: VECTORLP realVector+ VECTORRP;
 
 Real: ([+-]? Digit* '.' Digit+ | '.' Digit+) ExponentPart?
     | PNDigit+ ExponentPart;
@@ -32,3 +43,8 @@ fragment PNDigit:              [+-]? Digit+;
 fragment Digit:                [0-9];
 
 WS: [ \t]+ -> skip;
+
+VECTORLP: '[';
+VECTORRP: ']';
+COMPLEXLP: '(';
+COMPLEXRP: ')';
