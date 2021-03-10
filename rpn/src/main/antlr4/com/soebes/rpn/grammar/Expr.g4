@@ -28,19 +28,23 @@ expr: complex
     | complexMatrix
     | Real;
 
-complex: COMPLEXLP Real ',' Real COMPLEXRP;
-complexVector: VECTORLP complex VECTORRP;
+complex: COMPLEXLP realPart ',' imagPart COMPLEXRP;
+complexVector: VECTORLP complex+ VECTORRP;
 complexMatrix: VECTORLP complexVector+ VECTORRP;
 realVector: VECTORLP Real+ VECTORRP;
 realMatrix: VECTORLP realVector+ VECTORRP;
 
-Real: ([+-]? Digit* '.' Digit+ | '.' Digit+) ExponentPart?
-    | PNDigit+ ExponentPart;
+realPart: Real;
+imagPart: Real;
 
-fragment ExponentPart:         ('e' | 'E') PNDigit;
-fragment NonZeroDigit:         [1-9];
-fragment PNDigit:              [+-]? Digit+;
-fragment Digit:                [0-9];
+Real: ([+-]? DIGIT* '.' DIGIT+ | '.' DIGIT+) EXPONENT?
+    | PNDigit+ EXPONENT;
+
+fragment EXPONENT:     EE PNDigit;
+fragment NonZeroDigit: [1-9];
+fragment PNDigit:      [+-]? DIGIT+;
+fragment DIGIT:        [0-9];
+fragment EE: 'eE';
 
 WS: [ \t]+ -> skip;
 
