@@ -19,5 +19,24 @@ package com.soebes.rpn.types;
  * under the License.
  */
 
-public class Complex {
+import com.soebes.rpn.Element;
+import org.apiguardian.api.API;
+
+import static org.apiguardian.api.API.Status.EXPERIMENTAL;
+
+@API(status = EXPERIMENTAL)
+public class Complex implements Element {
+
+  private final Double re;
+  private final Double im;
+
+  public Complex(Double re, Double im) {
+    this.re = re;
+    this.im = im;
+  }
+
+  public Types type() {
+    return Types.Complex;
+  }
+
 }

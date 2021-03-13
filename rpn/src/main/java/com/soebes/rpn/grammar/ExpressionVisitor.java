@@ -20,16 +20,40 @@ package com.soebes.rpn.grammar;
  */
 
 
+import com.soebes.rpn.Element;
 import com.soebes.rpn.types.Complex;
 
-class ExpressionVisitor extends com.soebes.rpn.grammar.ExprBaseVisitor<Complex> {
+class ExpressionVisitor extends ExprBaseVisitor<Element> {
+
+  private Complex complex;
 
   public ExpressionVisitor() {
+    this.complex = null;
+  }
+
+  public Complex getComplex() {
+    return complex;
   }
 
   @Override
-  public Complex visitGrpReal(ExprParser.GrpRealContext ctx) {
-    System.out.println("ctx.getText() = " + ctx.getText());
-    return new Complex(); // Double.valueOf(ctx.getText());
+  public Element visitGrpComplex(ExprParser.GrpComplexContext ctx) {
+    System.out.println("GrpComplex: " + ctx.complex().realPart().getText() + " " + ctx.complex().imagPart().getText());
+    super.visitGrpComplex(ctx);
+    return null;
   }
+
+  @Override
+  public Element visitComplexVector(ExprParser.ComplexVectorContext ctx) {
+    ctx.complex().stream().forEach(s -> System.out.println("s.realPart() = {" + s.realPart().getText() + " " + s.imagPart().getText() + "}"));
+    super.visitComplexVector(ctx);
+    return null;
+  }
+
+  @Override
+  public Element visitRealVector(ExprParser.RealVectorContext ctx) {
+    System.out.println("ctx = " + ctx.REAL());
+    super.visitRealVector(ctx);
+    return null;
+  }
+
 }

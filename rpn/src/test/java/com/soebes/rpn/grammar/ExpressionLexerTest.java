@@ -27,6 +27,7 @@ class ExpressionLexerTest {
         arguments("Real", ".1e1", List.of("REAL")),
         arguments("Real", ".1e-1", List.of("REAL")),
         arguments("Real", ".1e-05", List.of("REAL")),
+        arguments("Real", "-.e1", List.of("REAL")), //Is that a valid real?
         arguments("Real", "3.14159265359", List.of("REAL")),
         arguments("Real", "3.14E-10", List.of("REAL")),
         arguments("Real", "3.E-10", List.of("REAL")),
