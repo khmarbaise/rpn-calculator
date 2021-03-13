@@ -28,7 +28,7 @@ class ExpressionVisitor extends com.soebes.rpn.grammar.ExprBaseVisitor<Complex> 
   }
 
   @Override
-  public Complex visitGrpEeal(ExprParser.GrpEealContext ctx) {
+  public Complex visitGrpReal(ExprParser.GrpRealContext ctx) {
     System.out.println("ctx.getText() = " + ctx.getText());
     return new Complex(); // Double.valueOf(ctx.getText());
   }
