@@ -38,7 +38,7 @@ realPart: Real;
 imagPart: Real;
 
 Real: ([+-]? DIGIT* '.' DIGIT+ | '.' DIGIT+) EXPONENT?
-    | PNDigit+ EXPONENT;
+    | PNDigit+ EXPONENT?;
 
 fragment EXPONENT:     EE PNDigit;
 fragment NonZeroDigit: [1-9];
