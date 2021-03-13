@@ -1,4 +1,4 @@
-grammar Expr;
+package com.soebes.rpn.grammar;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,37 +19,17 @@ grammar Expr;
  * under the License.
  */
 
-start: expr*;
 
-expr: complex #grpComplex
-    | realVector # grpRealVector
-    | realMatrix # grpRealMatrix
-    | complexVector # grpComplexVector
-    | complexMatrix # grpComplexMatrix
-    | Real # grpEeal
-    ;
+import com.soebes.rpn.types.Complex;
 
-complex: COMPLEXLP realPart ',' imagPart COMPLEXRP;
-complexVector: VECTORLP complex+ VECTORRP;
-complexMatrix: VECTORLP complexVector+ VECTORRP;
-realVector: VECTORLP Real+ VECTORRP;
-realMatrix: VECTORLP realVector+ VECTORRP;
+class ExpressionVisitor extends com.soebes.rpn.grammar.ExprBaseVisitor<Complex> {
 
-realPart: Real;
-imagPart: Real;
+  public ExpressionVisitor() {
+  }
 
-Real: ([+-]? DIGIT* '.' DIGIT+ | '.' DIGIT+) EXPONENT?
-    | PNDigit+ EXPONENT?;
-
-fragment EXPONENT:     EE PNDigit;
-fragment NonZeroDigit: [1-9];
-fragment PNDigit:      [+-]? DIGIT+;
-fragment DIGIT:        [0-9];
-fragment EE: 'eE';
-
-WS: [ \t]+ -> skip;
-
-VECTORLP: '[';
-VECTORRP: ']';
-COMPLEXLP: '(';
-COMPLEXRP: ')';
+  @Override
+  public Complex visitGrpEeal(ExprParser.GrpEealContext ctx) {
+    System.out.println("ctx.getText() = " + ctx.getText());
+    return new Complex(); // Double.valueOf(ctx.getText());
+  }
+}
