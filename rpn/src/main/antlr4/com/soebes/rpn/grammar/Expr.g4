@@ -19,7 +19,7 @@ grammar Expr;
  * under the License.
  */
 
-start: expr*;
+hp28: expr*;
 
 expr: complex #grpComplex
     | realVector # grpRealVector

@@ -54,7 +54,7 @@ public class ExpressionVisitorTest {
     var parser = new com.soebes.rpn.grammar.ExprParser(new CommonTokenStream(exprLexer));
 //    parser.removeErrorListeners();
 //    parser.addErrorListener(ThrowingErrorListener.INSTANCE);
-    var tree = parser.start();
+    var tree = parser.hp28();
     var visitor = new ExpressionVisitor();
     visitor.visit(tree);
     Complex result = visitor.getComplex();
