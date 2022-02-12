@@ -29,7 +29,7 @@
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>5.3.1</version>
+    <version>5.3.7</version>
   </parent>
 
   <groupId>com.soebes.rpn</groupId>
@@ -53,34 +53,32 @@
   <properties>
     <smpp.component>rpn-calculator</smpp.component>
 
-    <maven.compiler.release>15</maven.compiler.release>
-    <maven.compiler.target>15</maven.compiler.target>
-    <maven.compiler.source>15</maven.compiler.source>
-    <antlr4-maven-plugin.version>4.9.1</antlr4-maven-plugin.version>
+    <maven.compiler.release>17</maven.compiler.release>
+    <antlr4-maven-plugin.version>4.9.3</antlr4-maven-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.2</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>nl.jqno.equalsverifier</groupId>
         <artifactId>equalsverifier</artifactId>
-        <version>3.4.1</version>
+        <version>3.7.1</version>
       </dependency>
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
-        <version>3.18.1</version>
+        <version>3.21.0</version>
       </dependency>
       <dependency>
         <groupId>org.apiguardian</groupId>
         <artifactId>apiguardian-api</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.2</version>
       </dependency>
       <dependency>
         <groupId>org.antlr</groupId>
@@ -102,11 +100,6 @@
           <groupId>org.antlr</groupId>
           <artifactId>antlr4-maven-plugin</artifactId>
           <version>${antlr4-maven-plugin.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.6</version>
         </plugin>
       </plugins>
     </pluginManagement>
