@@ -43,3 +43,5 @@ Precision HP28S vs. IEEE 754 double precision (Java Double)
 
 Sehr gut 
 https://tredje.se/rpn28xcalc.html
+
+https://github.com/sympy/sympy
