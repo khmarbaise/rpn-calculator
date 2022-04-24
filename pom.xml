@@ -54,7 +54,7 @@
     <smpp.component>rpn-calculator</smpp.component>
 
     <maven.compiler.release>17</maven.compiler.release>
-    <antlr4-maven-plugin.version>4.9.3</antlr4-maven-plugin.version>
+    <antlr4-maven-plugin.version>4.10.1</antlr4-maven-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
