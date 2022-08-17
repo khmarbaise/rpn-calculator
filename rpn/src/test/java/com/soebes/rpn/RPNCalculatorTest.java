@@ -27,7 +27,7 @@ class RPNCalculatorTest {
 
   @Test
   void first_test() {
-    // push two values and an operator on an a stack.
+    // push two values and an operator on a stack.
 
     assertThat(true).isTrue();
   }
