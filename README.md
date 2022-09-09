@@ -16,6 +16,13 @@
 -->
 # rpn-calculator
 
+[![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
+[![Build Status](https://cloud.drone.io/api/badges/khmarbaise/rpn-calculator/status.svg)](https://cloud.drone.io/khmarbaise/rpn-calculator)
+[![Issues](https://img.shields.io/github/issues/khmarbaise/rpn-calculator)](https://github.com/khmarbaise/rpn-calculator/issues)
+[![Issues Closed](https://img.shields.io/github/issues-closed/khmarbaise/rpn-calculator)](https://github.com/khmarbaise/rpn-calculator/issues?q=is%3Aissue+is%3Aclosed)
+[![codecov](https://codecov.io/gh/khmarbaise/rpn-calculator/branch/master/graph/badge.svg?token=RULU3ULC3O)](https://codecov.io/gh/khmarbaise/rpn-calculator)
+
+
  * Real Number `real`
  * Complex Number `(re,im)`
  * Binary Integer `#1234AB` (64 Bit)
@@ -49,3 +56,5 @@ Precision HP28S vs. IEEE 754 double precision (Java Double)
 https://tredje.se/rpn28xcalc.html
 
 https://github.com/sympy/sympy
+
+https://hackernoon.com/building-your-own-programming-language-from-scratch
