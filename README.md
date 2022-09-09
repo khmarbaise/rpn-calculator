@@ -58,3 +58,6 @@ https://tredje.se/rpn28xcalc.html
 https://github.com/sympy/sympy
 
 https://hackernoon.com/building-your-own-programming-language-from-scratch
+
+
+[license]: https://www.apache.org/licenses/LICENSE-2.0
