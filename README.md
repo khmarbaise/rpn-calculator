@@ -16,16 +16,16 @@
 -->
 # rpn-calculator
 
- * Reelle Zahl `reell`
- * Komplexe Zahl `(re,im)`
- * Binär Wert `#Zeichen`
+ * Real Number `real`
+ * Complex Number `(re,im)`
+ * Binary Integer `#1234AB` (64 Bit)
  * String `"Text"`
- * Reeller Vektor `[reell reell]`
- * Reelle Matrix `[[r11,r21][r21,r22][r31,r32]]`
- * Komplexer Vektor `[(a,b) (a,b)]`
- * Komplexer Matrix `[[(a,b),(a,b)][(a,b),(a,b)][(a,b),(a,b)]]`
- * Liste `{Object, Object,...}`
- * Ausdruck `'Ausdruck'`
+ * Real Vector `[reall real]`
+ * Real Matrix `[[r11,r21][r21,r22][r31,r32]]`
+ * Complex Vector `[(a,b) (a,b)]`
+ * Complex Matrix `[[(a,b),(a,b)][(a,b),(a,b)][(a,b),(a,b)]]`
+ * List `{Object, Object,...}`
+ * Expression `'Ausdruck'`
 
 # Build
 
@@ -41,7 +41,7 @@ Precision HP28S vs. IEEE 754 double precision (Java Double)
 * http://thimet.de/CalcCollection/Calculators/HP-28SC/HP-28S-Quick-Reference.pdf
 * https://en.wikipedia.org/wiki/Double-precision_floating-point_format
 
-Sehr gut 
+
 https://tredje.se/rpn28xcalc.html
 
 https://github.com/sympy/sympy

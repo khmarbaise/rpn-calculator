@@ -19,6 +19,10 @@ class ExpressionLexerTest {
 
   static Stream<Arguments> tokens() {
     return Stream.of(
+        arguments("Binary", "#1", List.of("BINARY")),
+        arguments("Binary", "#1ABCD", List.of("BINARY")),
+        arguments("Binary", "#F189ABCDF", List.of("BINARY")),
+        arguments("Binary", "#FFFFFFFFFFFFFFFF", List.of("BINARY")),
         arguments("Real", "3", List.of("REAL")),
         arguments("Real", "3.0", List.of("REAL")),
         arguments("Real", "3.", List.of("REAL")),

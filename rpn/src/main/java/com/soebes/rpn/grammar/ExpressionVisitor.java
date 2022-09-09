@@ -56,4 +56,11 @@ class ExpressionVisitor extends ExprBaseVisitor<Element> {
     return null;
   }
 
+  @Override
+  public Element visitGrpBinary(ExprParser.GrpBinaryContext ctx) {
+    System.out.println("ctx = " + ctx.BINARY());
+    super.visitGrpBinary(ctx);
+    return null;
+  }
+
 }

@@ -27,6 +27,7 @@ expr: complex #grpComplex
     | complexVector # grpComplexVector
     | complexMatrix # grpComplexMatrix
     | REAL # grpReal
+    | BINARY # grpBinary
     ;
 
 complex: COMPLEXLP realPart SEP imagPart COMPLEXRP;
@@ -41,7 +42,9 @@ imagPart: REAL;
 REAL: [+-]? ([0-9])* '.' ([0-9])* (('e' | 'E') [+-]? ([0-9])+)?
     | [+-]? ([0-9])+ (('e' | 'E') [+-]? ([0-9])+)?;
 
-WS: [ \t]+ -> skip;
+BINARY: '#' [a-fA-F0-9][_a-fA-F0-9]*;
+
+WS: [ \t\n]+ -> skip;
 
 VECTORLP: '[';
 VECTORRP: ']';
