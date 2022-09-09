@@ -46,7 +46,8 @@ steps:
       token:
         from_secret: CODECOV_TOKEN
       files:
-        - target/site/jacoco/jacoco.xml
+        - rpn/target/site/jacoco/jacoco.xml
+        - numbers/target/site/jacoco/jacoco.xml
   - name: rebuild
     image: meltwater/drone-cache:v1.3.0
     pull: always
