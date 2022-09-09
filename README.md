@@ -27,6 +27,10 @@
  * List `{Object, Object,...}`
  * Expression `'Ausdruck'`
 
+# Step 2
+
+ * Fraction `(nom;denom)`
+
 # Build
 
 Code coverage via:
