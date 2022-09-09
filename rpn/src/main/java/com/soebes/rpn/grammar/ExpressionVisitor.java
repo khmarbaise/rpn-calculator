@@ -43,6 +43,11 @@ class ExpressionVisitor extends ExprBaseVisitor<Element> {
   }
 
   @Override
+  public Element visitGRPUNARY(ExprParser.GRPUNARYContext ctx) {
+    return visitChildren(ctx);
+  }
+
+  @Override
   public Element visitComplexVector(ExprParser.ComplexVectorContext ctx) {
     ctx.complex().stream().forEach(s -> System.out.println("s.realPart() = {" + s.realPart().getText() + " " + s.imagPart().getText() + "}"));
     super.visitComplexVector(ctx);
@@ -52,13 +57,16 @@ class ExpressionVisitor extends ExprBaseVisitor<Element> {
   @Override
   public Element visitRealVector(ExprParser.RealVectorContext ctx) {
     System.out.println("ctx = " + ctx.REAL());
+    ctx.REAL().stream().forEach(s -> System.out.println("s.() = {" + s.getText() + "}"));
     super.visitRealVector(ctx);
     return null;
   }
 
   @Override
   public Element visitGrpBinary(ExprParser.GrpBinaryContext ctx) {
-    System.out.println("ctx = " + ctx.BINARY());
+    String binaryNumber = ctx.BINARY().getText().replace("_", "");
+    var binaryValue = Long.valueOf(binaryNumber, 16);
+    System.out.println("ctx = " + ctx.BINARY() + " Value:" + binaryValue);
     super.visitGrpBinary(ctx);
     return null;
   }
