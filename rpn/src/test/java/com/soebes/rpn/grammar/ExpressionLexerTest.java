@@ -39,7 +39,8 @@ class ExpressionLexerTest {
         arguments("Real Matrix", "[[3.E-10]]", List.of("VECTORLP", "VECTORLP", "REAL", "VECTORRP", "VECTORRP")),
         arguments("Complex", "(3.e0,2.31e-21)", List.of("COMPLEXLP", "REAL", "SEP", "REAL", "COMPLEXRP")),
         arguments("Complex Vector", "[(3.e0,2.31e-21)]", List.of("VECTORLP", "COMPLEXLP", "REAL", "SEP", "REAL", "COMPLEXRP", "VECTORRP")),
-        arguments("Complex Matrix", "[[(3.e0,2.31e-21)]]", List.of("VECTORLP", "VECTORLP", "COMPLEXLP", "REAL", "SEP", "REAL", "COMPLEXRP", "VECTORRP", "VECTORRP"))
+        arguments("Complex Matrix", "[[(3.e0,2.31e-21)]]", List.of("VECTORLP", "VECTORLP", "COMPLEXLP", "REAL", "SEP", "REAL", "COMPLEXRP", "VECTORRP", "VECTORRP")),
+        arguments("Add Binary", "#1000+#2000", List.of("BINARY","ADD", "BINARY"))
     );
   }
 

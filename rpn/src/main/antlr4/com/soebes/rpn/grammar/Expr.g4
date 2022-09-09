@@ -21,7 +21,11 @@ grammar Expr;
 
 hp28: expr*;
 
-expr: complex #grpComplex
+expr: '-' expr # GRPUNARY
+    | expr multiplicationOp expr # GRPMULTIPLICATION
+    | expr additionOp expr # GRPADDITION
+    | '(' expr ')' # GRPPARENT
+    | complex #grpComplex
     | realVector # grpRealVector
     | realMatrix # grpRealMatrix
     | complexVector # grpComplexVector
@@ -39,6 +43,9 @@ realMatrix: VECTORLP realVector+ VECTORRP;
 realPart: REAL;
 imagPart: REAL;
 
+multiplicationOp: MUL | DIV | MOD ;
+additionOp: ADD | SUB;
+
 REAL: [+-]? ([0-9])* '.' ([0-9])* (('e' | 'E') [+-]? ([0-9])+)?
     | [+-]? ([0-9])+ (('e' | 'E') [+-]? ([0-9])+)?;
 
@@ -51,3 +58,9 @@ VECTORRP: ']';
 COMPLEXLP: '(';
 COMPLEXRP: ')';
 SEP: ',';
+
+MUL: '*';
+DIV: '/';
+MOD: '%';
+ADD: '+';
+SUB: '-';
