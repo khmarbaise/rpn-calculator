@@ -25,10 +25,10 @@ import com.soebes.rpn.types.Complex;
 
 class ExpressionVisitor extends ExprBaseVisitor<Element> {
 
-  private Complex complex;
+  private final Complex complex;
 
   public ExpressionVisitor() {
-    this.complex = null;
+    this.complex = new Complex(1.0, 2.0);
   }
 
   public Complex getComplex() {
@@ -56,8 +56,8 @@ class ExpressionVisitor extends ExprBaseVisitor<Element> {
 
   @Override
   public Element visitRealVector(ExprParser.RealVectorContext ctx) {
-    System.out.println("ctx = " + ctx.REAL());
     ctx.REAL().stream().forEach(s -> System.out.println("s.() = {" + s.getText() + "}"));
+    System.out.println("ctx = " + ctx.REAL());
     super.visitRealVector(ctx);
     return null;
   }
