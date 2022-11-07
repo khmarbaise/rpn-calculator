@@ -20,50 +20,52 @@ package com.soebes.rpn.grammar;
  */
 
 
-import com.soebes.rpn.Element;
-import com.soebes.rpn.types.Complex;
+import com.soebes.rpn.Programm;
 
-class ExpressionVisitor extends ExprBaseVisitor<Element> {
-
-  private final Complex complex;
+class ExpressionVisitor extends ExprBaseVisitor<Programm> {
 
   public ExpressionVisitor() {
-    this.complex = new Complex(1.0, 2.0);
-  }
-
-  public Complex getComplex() {
-    return complex;
+    System.out.println("ExpressionVisitor.ExpressionVisitor");
   }
 
   @Override
-  public Element visitGrpComplex(ExprParser.GrpComplexContext ctx) {
-    System.out.println("GrpComplex: " + ctx.complex().realPart().getText() + " " + ctx.complex().imagPart().getText());
+  public Programm visitGrpReal(ExprParser.GrpRealContext ctx) {
+    System.out.println("ctx = " + ctx.REAL().getText());
+    return super.visitGrpReal(ctx);
+  }
+
+  @Override
+  public Programm visitGrpComplex(ExprParser.GrpComplexContext ctx) {
+    System.out.println(
+        "GrpComplex: " + ctx.complex().realPart().getText() + " " + ctx.complex().imagPart().getText());
     super.visitGrpComplex(ctx);
     return null;
   }
 
   @Override
-  public Element visitGRPUNARY(ExprParser.GRPUNARYContext ctx) {
+  public Programm visitGRPUNARY(ExprParser.GRPUNARYContext ctx) {
     return visitChildren(ctx);
   }
 
   @Override
-  public Element visitComplexVector(ExprParser.ComplexVectorContext ctx) {
-    ctx.complex().stream().forEach(s -> System.out.println("s.realPart() = {" + s.realPart().getText() + " " + s.imagPart().getText() + "}"));
+  public Programm visitComplexVector(ExprParser.ComplexVectorContext ctx) {
+    ctx.complex().stream().forEach(s -> System.out.println(
+        "s.realPart() = {" + s.realPart().getText() + " " + s.imagPart().getText() + "}"));
     super.visitComplexVector(ctx);
     return null;
   }
 
   @Override
-  public Element visitRealVector(ExprParser.RealVectorContext ctx) {
+  public Programm visitRealVector(ExprParser.RealVectorContext ctx) {
     ctx.REAL().stream().forEach(s -> System.out.println("s.() = {" + s.getText() + "}"));
+    ctx.REAL().stream().forEach(s -> System.out.println("s.getText() = " + s.getSymbol()));
     System.out.println("ctx = " + ctx.REAL());
     super.visitRealVector(ctx);
     return null;
   }
 
   @Override
-  public Element visitGrpBinary(ExprParser.GrpBinaryContext ctx) {
+  public Programm visitGrpBinary(ExprParser.GrpBinaryContext ctx) {
     String binaryNumber = ctx.BINARY().getText().replace("_", "");
     var binaryValue = Long.valueOf(binaryNumber, 16);
     System.out.println("ctx = " + ctx.BINARY() + " Value:" + binaryValue);

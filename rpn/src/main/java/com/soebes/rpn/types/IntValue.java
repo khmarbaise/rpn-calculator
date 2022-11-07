@@ -19,13 +19,13 @@ package com.soebes.rpn.types;
  * under the License.
  */
 
-import com.soebes.rpn.Element;
+import com.soebes.rpn.Programm;
 import org.apiguardian.api.API;
 
 import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 
 @API(status = EXPERIMENTAL)
-public class IntValue implements Element {
+public class IntValue implements Programm {
   private final Integer value;
 
   public IntValue(Integer value) {

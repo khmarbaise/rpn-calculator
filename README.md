@@ -60,4 +60,6 @@ https://github.com/sympy/sympy
 * https://hackernoon.com/building-your-own-programming-language-from-scratch
 * https://github.com/alexandermakeev/toy-language
 
+* https://jakubdziworski.github.io/categories.html#Enkel-ref
+ 
 [license]: https://www.apache.org/licenses/LICENSE-2.0

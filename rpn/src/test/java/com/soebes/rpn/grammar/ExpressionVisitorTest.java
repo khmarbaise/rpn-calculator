@@ -19,7 +19,9 @@ package com.soebes.rpn.grammar;
  * under the License.
  */
 
-import com.soebes.rpn.types.Complex;
+import java.util.stream.Stream;
+
+import com.soebes.rpn.Programm;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.jupiter.api.Disabled;
@@ -27,9 +29,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.stream.Stream;
-
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @Disabled
@@ -37,9 +36,9 @@ class ExpressionVisitorTest {
 
   static Stream<Arguments> createExpressionToParse() {
     return Stream.of(
-        arguments("Real", "3.13", 3.13),
-        arguments("Complex", "(3.13,1.0)", 3.13)
-//        arguments("Real Vector", "[1 2 3 4]", 3.13)
+//        arguments("Real", "3.13", 3.13)
+//        arguments("Complex", "(3.13,1.0)", 3.13)
+        arguments("Real Vector", "[1 2 3 4]", 3.13)
 //        arguments("Complex Vector", "[(1,0) (2,0) (3,0) (4,0)]", 3.13)
     );
   }
@@ -56,10 +55,9 @@ class ExpressionVisitorTest {
 //    parser.addErrorListener(ThrowingErrorListener.INSTANCE);
     var tree = parser.hp28();
     var visitor = new ExpressionVisitor();
-    visitor.visit(tree);
-    Complex result = visitor.getComplex();
+    Programm program = visitor.visit(tree);
 
-    assertThat(result).as("Expected: %s but got:%s", expectedResult, result).isEqualTo(expectedResult);
+//    assertThat(result).as("Expected: %s but got:%s", expectedResult, result).isEqualTo(expectedResult);
   }
 
 }

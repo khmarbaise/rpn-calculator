@@ -27,13 +27,13 @@ import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 
 @API(status = EXPERIMENTAL)
 public class StackMemory {
-  private final ArrayDeque<Element> stack;
+  private final ArrayDeque<Programm> stack;
 
   public StackMemory() {
     this.stack = new ArrayDeque<>();
   }
 
-  public void push(Element item) {
+  public void push(Programm item) {
     this.stack.addFirst(item);
   }
 

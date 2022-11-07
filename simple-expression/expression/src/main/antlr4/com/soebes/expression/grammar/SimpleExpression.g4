@@ -1,4 +1,4 @@
-package com.soebes.rpn;
+grammar SimpleExpression;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,13 +19,23 @@ package com.soebes.rpn;
  * under the License.
  */
 
-import com.soebes.rpn.types.Types;
-import org.apiguardian.api.API;
+expr: left=expr operator=operatorMult right=expr # mulExpression
+    | left=expr operator=operatorAdd right=expr # addExpression
+    | '(' expr ')' # parExpression
+    | REAL # grpReal
+    ;
 
-import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 
-@API(status = EXPERIMENTAL)
-public interface Element {
+operatorAdd: ADD | SUB;
+operatorMult: MUL | DIV;
 
-  Types type();
-}
+
+REAL: ([0-9])* '.' ([0-9])* (('e' | 'E') [+-]? ([0-9])+)?
+    | ([0-9])+ (('e' | 'E') [+-]? ([0-9])+)?;
+
+WS: [ \t\n]+ -> skip;
+
+ADD: '+';
+SUB: '-';
+MUL: '*';
+DIV: '/';

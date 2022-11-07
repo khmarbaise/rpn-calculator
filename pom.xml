@@ -53,15 +53,15 @@
   <properties>
     <smpp.component>rpn-calculator</smpp.component>
 
-    <maven.compiler.release>17</maven.compiler.release>
-    <antlr4-maven-plugin.version>4.10.1</antlr4-maven-plugin.version>
+    <maven.compiler.release>19</maven.compiler.release>
+    <antlr4-maven-plugin.version>4.11.1</antlr4-maven-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.9.0</version>
+        <version>5.9.1</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -85,21 +85,54 @@
         <artifactId>antlr4-runtime</artifactId>
         <version>${antlr4-maven-plugin.version}</version>
       </dependency>
+      <dependency>
+        <groupId>net.bytebuddy</groupId>
+        <artifactId>byte-buddy</artifactId>
+        <version>1.10.14</version>
+      </dependency>
+      <dependency>
+        <groupId>org.ow2.asm</groupId>
+        <artifactId>asm-bom</artifactId>
+        <version>9.4</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <modules>
     <module>numbers</module>
     <module>rpn</module>
+    <module>simple-expression</module>
   </modules>
 
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <compilerArgs>
+              <compilerArg>--enable-preview</compilerArg>
+            </compilerArgs>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <argLine>--enable-preview</argLine>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>org.antlr</groupId>
           <artifactId>antlr4-maven-plugin</artifactId>
           <version>${antlr4-maven-plugin.version}</version>
+          <configuration>
+            <visitor>true</visitor>
+            <listener>false</listener>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

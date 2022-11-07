@@ -19,9 +19,9 @@ package com.soebes.rpn.types;
  * under the License.
  */
 
-import com.soebes.rpn.Element;
+import com.soebes.rpn.Programm;
 
-public class ComplexValue implements Element {
+public class ComplexValue implements Programm {
   private final Complex value;
 
   public ComplexValue(Complex value) {
