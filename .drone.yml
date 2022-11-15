@@ -40,14 +40,14 @@ steps:
       - mvn -Dmaven.repo.local=/drone/src/.repo -V --no-transfer-progress clean verify --fail-at-end --batch-mode
   # We have to use the latest version instead of a tagged version.
   # We need to reconsider the configuration.
-  - name: coverage
-    image: plugins/codecov
-    settings:
-      token:
-        from_secret: CODECOV_TOKEN
-      files:
-        - rpn/target/site/jacoco/jacoco.xml
-        - numbers/target/site/jacoco/jacoco.xml
+#  - name: coverage
+#    image: plugins/codecov
+#    settings:
+#      token:
+#        from_secret: CODECOV_TOKEN
+#      files:
+#        - rpn/target/site/jacoco/jacoco.xml
+#        - numbers/target/site/jacoco/jacoco.xml
   - name: rebuild
     image: meltwater/drone-cache:v1.4.0
     pull: always
