@@ -37,7 +37,6 @@ public class Runtime {
         case DIV -> evaluate(be.left()) / evaluate(be.right());
         case MUL -> evaluate(be.left()) * evaluate(be.right());
       };
-      default -> throw new IllegalStateException();
     };
   }
 

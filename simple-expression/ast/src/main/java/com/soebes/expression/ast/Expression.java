@@ -1,4 +1,5 @@
 package com.soebes.expression.ast;
 
-public interface Expression {
+public sealed interface Expression permits BinaryExpression, DecimalLiteral {
+
 }
