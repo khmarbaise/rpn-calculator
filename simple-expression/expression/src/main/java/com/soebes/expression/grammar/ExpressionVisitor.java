@@ -32,6 +32,7 @@ import static com.soebes.expression.ast.BinaryExpression.Operator.SUB;
 public class ExpressionVisitor extends SimpleExpressionBaseVisitor<Expression> {
 
   public ExpressionVisitor() {
+    // intentionally empty.
   }
 
   @Override
