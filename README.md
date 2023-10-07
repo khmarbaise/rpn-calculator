@@ -40,6 +40,17 @@
 
 # Build
 
+## Prerequisites
+If you like to build that project on your own you have to have the following setup:
+
+* JDK21+
+* Maven 3.8+
+
+```bash
+mvn clean verify
+```
+
+## Code Coverage
 Code coverage via:
 ```bash
 mvn clean verify org.jacoco:jacoco-maven-plugin:report
