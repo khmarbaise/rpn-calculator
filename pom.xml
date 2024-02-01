@@ -29,7 +29,8 @@
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>6.0.3</version>
+    <version>6.0.5</version>
+    <relativePath/>
   </parent>
 
   <groupId>com.soebes.rpn</groupId>
@@ -61,21 +62,21 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.10.0</version>
+        <version>5.10.1</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-bom</artifactId>
-        <version>3.24.2</version>
+        <version>3.25.2</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>nl.jqno.equalsverifier</groupId>
         <artifactId>equalsverifier</artifactId>
-        <version>3.15.2</version>
+        <version>3.15.6</version>
       </dependency>
       <dependency>
         <groupId>org.apiguardian</groupId>
