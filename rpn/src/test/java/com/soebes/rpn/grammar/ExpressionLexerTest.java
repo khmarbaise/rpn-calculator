@@ -48,8 +48,8 @@ class ExpressionLexerTest {
   }
 
   @ParameterizedTest(name = "{0}: expression: ''{1}'' expectedTokens: ''{2}''")
-  @MethodSource("tokens")
-  void name(String description, String expression, List<String> expectedTokens) {
+  @MethodSource
+  void tokens(String description, String expression, List<String> expectedTokens) {
     var input = CharStreams.fromString(expression);
     var tokenStream = new CommonTokenStream(new ExprLexer(input));
 
