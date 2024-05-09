@@ -30,12 +30,12 @@ public class Runtime {
 
   public static Double evaluate(Expression expression) {
     return switch (expression) {
-      case DecimalLiteral dl -> dl.value();
-      case BinaryExpression be -> switch (be.operator()) {
-        case ADD -> evaluate(be.left()) + evaluate(be.right());
-        case SUB -> evaluate(be.left()) - evaluate(be.right());
-        case DIV -> evaluate(be.left()) / evaluate(be.right());
-        case MUL -> evaluate(be.left()) * evaluate(be.right());
+      case DecimalLiteral(var value) -> value;
+      case BinaryExpression(var operator, var left, var right) -> switch (operator) {
+        case ADD -> evaluate(left) + evaluate(right);
+        case SUB -> evaluate(left) - evaluate(right);
+        case DIV -> evaluate(left) / evaluate(right);
+        case MUL -> evaluate(left) * evaluate(right);
       };
     };
   }
