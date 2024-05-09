@@ -24,10 +24,10 @@ import com.soebes.expression.ast.DecimalLiteral;
 import com.soebes.expression.ast.Expression;
 import org.antlr.v4.runtime.Token;
 
-import static com.soebes.expression.ast.BinaryExpression.Operator.ADD;
-import static com.soebes.expression.ast.BinaryExpression.Operator.DIV;
-import static com.soebes.expression.ast.BinaryExpression.Operator.MUL;
-import static com.soebes.expression.ast.BinaryExpression.Operator.SUB;
+import static com.soebes.expression.ast.Operator.ADD;
+import static com.soebes.expression.ast.Operator.DIV;
+import static com.soebes.expression.ast.Operator.MUL;
+import static com.soebes.expression.ast.Operator.SUB;
 
 public class ExpressionVisitor extends SimpleExpressionBaseVisitor<Expression> {
 

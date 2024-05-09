@@ -29,10 +29,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.soebes.expression.ast.BinaryExpression.Operator.ADD;
-import static com.soebes.expression.ast.BinaryExpression.Operator.DIV;
-import static com.soebes.expression.ast.BinaryExpression.Operator.MUL;
-import static com.soebes.expression.ast.BinaryExpression.Operator.SUB;
+import static com.soebes.expression.ast.Operator.ADD;
+import static com.soebes.expression.ast.Operator.DIV;
+import static com.soebes.expression.ast.Operator.MUL;
+import static com.soebes.expression.ast.Operator.SUB;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 

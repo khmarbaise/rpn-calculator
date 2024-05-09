@@ -37,7 +37,7 @@ class ExpressionVisitorTest {
   static Stream<Arguments> createExpressionToParse() {
     return Stream.of(
 //        arguments("Real", "3.13", 3.13)
-//        arguments("Complex", "(3.13,1.0)", 3.13)
+        arguments("Complex", "(3.13,1.0)", 3.13),
         arguments("Real Vector", "[1 2 3 4]", 3.13)
 //        arguments("Complex Vector", "[(1,0) (2,0) (3,0) (4,0)]", 3.13)
     );

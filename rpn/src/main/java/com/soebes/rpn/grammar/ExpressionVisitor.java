@@ -49,7 +49,7 @@ class ExpressionVisitor extends ExprBaseVisitor<Programm> {
 
   @Override
   public Programm visitComplexVector(ExprParser.ComplexVectorContext ctx) {
-    ctx.complex().stream().forEach(s -> System.out.println(
+    ctx.complex().forEach(s -> System.out.println(
         "s.realPart() = {" + s.realPart().getText() + " " + s.imagPart().getText() + "}"));
     super.visitComplexVector(ctx);
     return null;
@@ -57,8 +57,8 @@ class ExpressionVisitor extends ExprBaseVisitor<Programm> {
 
   @Override
   public Programm visitRealVector(ExprParser.RealVectorContext ctx) {
-    ctx.REAL().stream().forEach(s -> System.out.println("s.() = {" + s.getText() + "}"));
-    ctx.REAL().stream().forEach(s -> System.out.println("s.getText() = " + s.getSymbol()));
+    ctx.REAL().forEach(s -> System.out.println("s.() = {" + s.getText() + "}"));
+    ctx.REAL().forEach(s -> System.out.println("s.getText() = " + s.getSymbol()));
     System.out.println("ctx = " + ctx.REAL());
     super.visitRealVector(ctx);
     return null;
