@@ -72,5 +72,8 @@ https://github.com/sympy/sympy
 * https://github.com/alexandermakeev/toy-language
 
 * https://jakubdziworski.github.io/categories.html#Enkel-ref
+
+Need to check:
+* https://mathparser.org/
  
 [license]: https://www.apache.org/licenses/LICENSE-2.0
