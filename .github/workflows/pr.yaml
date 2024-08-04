@@ -22,7 +22,7 @@ on:
       - '*'
 
 jobs:
-  build:
+  prbuild:
     name: Linux
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     needs:
-      - build
+      - prbuild
     steps:
       - name: Dependabot metadata
         id: metadata
